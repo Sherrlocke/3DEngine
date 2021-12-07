@@ -60,7 +60,7 @@ namespace nc {
 			data = value[name.c_str()].GetString();
 		}
 
-		bool Get(const rapidjson::Value& value, const std::string& name, glm::vec3& data) {
+		bool Get(const rapidjson::Value& value, const std::string& name, glm::vec2& data) {
 			// check if 'name' member exists and is an array with 2 elements
 			if (value.HasMember(name.c_str()) == false || value[name.c_str()].IsArray() == false || value[name.c_str()].Size() != 2)
 			{
@@ -79,7 +79,78 @@ namespace nc {
 			return true;
 		}
 
-		
+		bool Get(const rapidjson::Value& value, const std::string& name, glm::vec3& data) {
+			// check if 'name' member exists and is an array with 2 elements
+			if (value.HasMember(name.c_str()) == false || value[name.c_str()].IsArray() == false || value[name.c_str()].Size() != 3)
+			{
+				return false;
+			}
+
+			auto& array = value[name.c_str()];
+			for (rapidjson::SizeType i = 0; i < array.Size(); i++)
+			{
+				if (array[i].IsNumber())
+				{
+					data[i] = array[i].GetFloat();
+				}
+			}
+
+			return true;
+		}
+
+		bool Get(const rapidjson::Value& value, const std::string& name, glm::vec4& data)
+		{
+			// check if 'name' member exists and is an array
+			if (value.HasMember(name.c_str()) == false || value[name.c_str()].IsArray() == false || value[name.c_str()].Size() != 4)
+			{
+				return false;
+			}
+
+			auto& array = value[name.c_str()];
+			for (rapidjson::SizeType i = 0; i < array.Size(); i++)
+			{
+				if (array[i].IsNumber())
+				{
+					data[i] = array[i].GetFloat();
+				}
+			}
+
+			return true;
+		}
+
+		bool json::Get(const rapidjson::Value& value, const std::string& name, std::vector<std::string>& data)
+		{
+			// check if 'name' member exists and is an array with 2 elements
+			if (value.HasMember(name.c_str()) == false || value[name.c_str()].IsArray() == false)
+			{
+				return false;
+			}
+
+			auto& array = value[name.c_str()];
+			for (auto& element : array.GetArray())
+			{
+				data.push_back(element.GetString());
+			}
+
+			return true;
+		}
+
+		bool json::Get(const rapidjson::Value& value, const std::string& name, std::vector<int>& data)
+		{
+			// check if 'name' member exists and is an array with 2 elements
+			if (value.HasMember(name.c_str()) == false || value[name.c_str()].IsArray() == false)
+			{
+				return false;
+			}
+
+			auto& array = value[name.c_str()];
+			for (auto& element : array.GetArray())
+			{
+				data.push_back(element.GetInt());
+			}
+
+			return true;
+		}
 
 
 	}

@@ -2,6 +2,7 @@
 #include <string>
 
 namespace nc {
-	void setFilePath(const std::string& pathName);
+	void SetFilePath(const std::string& pathName);
+	bool ReadFileToString(const std::string& filename, std::string& filestring);
 	std::string getFilePath();
 }

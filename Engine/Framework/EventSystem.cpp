@@ -1,5 +1,5 @@
 #include "EventSystem.h"
-#include "Object/Object.h"
+#include "../Object/Object.h"
 
 namespace nc {
 

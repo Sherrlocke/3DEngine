@@ -1,6 +1,6 @@
 #pragma once
 #include "AudioChannel.h"
-#include "Framework/System.h"
+#include "../Framework/System.h"
 #include <fmod.hpp>
 #include <string>
 #include <map>

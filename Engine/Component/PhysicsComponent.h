@@ -1,7 +1,7 @@
 #pragma once
 #include "Component.h"
-#include "Math/MathTypes.h"
-#include "Core/Serializable.h"
+#include "../Math/MathTypes.h"
+#include "../Core/Serializable.h"
 
 namespace nc {
 	class PhysicsComponent : public Component, public ISerializable {

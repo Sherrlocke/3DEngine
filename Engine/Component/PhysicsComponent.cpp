@@ -1,5 +1,5 @@
 #include "PhysicsComponent.h"
-#include "Engine.h"
+#include "../Engine.h"
 
 namespace nc {
 	void PhysicsComponent::Update() {

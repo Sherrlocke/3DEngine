@@ -1,6 +1,6 @@
 #pragma once
 #include "Component.h"
-#include "Audio/AudioChannel.h"
+#include "../Audio/AudioChannel.h"
 
 namespace nc {
 	class AudioComponent : public Component

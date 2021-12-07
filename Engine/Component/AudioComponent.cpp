@@ -1,5 +1,5 @@
 #include "AudioComponent.h"
-#include "Engine.h"
+#include "../Engine.h"
 
 namespace nc 
 {

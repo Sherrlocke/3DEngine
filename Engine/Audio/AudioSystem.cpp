@@ -1,5 +1,5 @@
 #include "AudioSystem.h"
-#include "Core/Utilities.h"
+#include "../Core/Utilities.h"
 
 namespace nc
 {

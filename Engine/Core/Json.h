@@ -1,7 +1,8 @@
 #pragma once
 #include "document.h"
-#include "Math/MathTypes.h"
+#include "../Math/MathTypes.h"
 #include <string>
+#include <vector>
 
 #define JSON_READ(value, data) nc::json::Get(value, #data, data);
 
@@ -19,6 +20,7 @@ namespace nc
 		bool Get(const rapidjson::Value& value, const std::string& name, glm::vec3& data);
 		bool Get(const rapidjson::Value& value, const std::string& name, glm::vec4& data);
 
-
+		bool Get(const rapidjson::Value& value, const std::string& name, std::vector<std::string>& data);
+		bool Get(const rapidjson::Value& value, const std::string& name, std::vector<int>& data);
 	}
 }
